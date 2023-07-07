@@ -1,27 +1,34 @@
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const people = [
-  { name: "yashwant", age: 19 },
-  { name: "kishen", age: 22 },
-  { name: "vishal", age: 35 },
-];
+const intersection = function (nums) {
+  let checkerArrIndex = Number.MAX_VALUE;
 
-// 1.
-// const newArr = [];
+  const intersectedArr = [];
 
-// for (let i = 0; i < arr.length; i++) {
-//   newArr[i] = arr[i] + 5;
-// }
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i].length < checkerArrIndex) checkerArrIndex = i;
+  }
 
-// arr.forEach((value, index) => {
-//   newArr[index] = value + 5;
-// });
+  const chekerArr = nums[checkerArrIndex];
 
-const newArr = arr.map((ele) => ele + 5);
+  for (let i = 0; i < nums.length; i++) {
+    const currentArr = nums[i];
+    console.log("current ele: ", currentEle);
 
-const updatedPeople = people.map((person) => ({
-  ...person,
-  age: person.age + 1,
-}));
-console.log(updatedPeople);
+    let checkStatus = 0;
 
-// console.log(newArr);
+    console.log("Status flag: ", checkStatus);
+
+    if (checkStatus === nums.length) {
+      intersectedArr.push(currentEle);
+    }
+  }
+
+  console.log(intersectedArr);
+};
+
+console.log(
+  intersection([
+    [3, 1, 2, 4, 5],
+    [1, 2, 3, 4],
+    [3, 4, 5, 6],
+  ])
+);
