@@ -1,14 +1,14 @@
 import "./Todo.css";
 
-const Todo = () => {
+const Todo = ({title, isComplete, deleteTodo}) => {
     return (
         <div className="todo-item">
-            <h4>Go To GYM</h4>
+            <h4>{title}</h4>
 
             <div className="action-holder">
-                <input type="checkbox"/>
+                <input type="checkbox" checked={isComplete}/>
 
-                <button>Delete</button>
+                <button onClick={deleteTodo}>Delete</button>
 
             </div>
         </div>
